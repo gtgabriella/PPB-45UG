@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/img_20210921_110346_min"
+         />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/nama"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/univ"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/nim"
+        android:textSize="15sp"
+        />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp">
+
+
+        <TableRow android:gravity="center">
+            <TextView
+                android:layout_marginRight="20dp"
+                android:padding="3dip"
+                android:text="@string/aa" />
+            <TextView
+                android:gravity="left"
+                android:padding="3dip"
+                android:text="@string/isiaa" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <TextView
+                android:layout_marginRight="20dp"
+                android:padding="3dip"
+                android:text="@string/status" />
+            <TextView
+                android:gravity="left"
+                android:padding="3dip"
+                android:text="@string/isistatus" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <TextView
+                android:layout_marginRight="20dp"
+                android:padding="3dip"
+                android:text="@string/ph" />
+            <TextView
+                android:gravity="left"
+                android:padding="3dip"
+                android:text="@string/isiph" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <TextView
+                android:layout_marginRight="20dp"
+                android:padding="3dip"
+                android:text="@string/email" />
+            <TextView
+                android:gravity="left"
+                android:padding="3dip"
+                android:text="@string/isiemail1" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <TextView
+                android:layout_marginRight="20dp"
+                android:padding="3dip"
+                android:text="" />
+            <TextView
+                android:gravity="left"
+                android:padding="3dip"
+                android:text="@string/isiemail2" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <TextView
+                android:layout_marginRight="20dp"
+                android:padding="3dip"
+                android:text="@string/reli" />
+            <TextView
+                android:gravity="left"
+                android:padding="3dip"
+                android:text="@string/isireli" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#DD3636"
+        android:text="Contact Me Via E-Mail" />
+
+
+</LinearLayout>

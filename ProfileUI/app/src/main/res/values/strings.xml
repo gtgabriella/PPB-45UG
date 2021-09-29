@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ProfileUI</string>
+    <string name="nama">Gabriella Teshalonika Gondokusumo</string>
+    <string name="univ">Student at Dian Nuswantoro University</string>
+    <string name="nim">A11.2019.11667</string>
+    <string name="email">Email</string>
+    <string name="isiemail1">: 111201911667@mhs.dinus.ac.id</string>
+    <string name="isiemail2">: gtg.gabriella@gmail.com</string>
+    <string name="status">Status</string>
+    <string name="isistatus">: Active</string>
+    <string name="aa">Academic Advisor</string>
+    <string name="isiaa">: Rama Aria Megantara</string>
+    <string name="ph">Phone Number</string>
+    <string name="isiph">: 082224198120</string>
+    <string name="reli">Religion</string>
+    <string name="isireli">: Christian</string>
+
+
+
+</resources>
