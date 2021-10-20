@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Record Kosong", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()){
-                listViewKu.add(String.valueOf(cursor.getInt(0)) + ". " + cursor.getString(1) + ", born at " + cursor.getString(2) + ", as " + cursor.getString(3) + " on the team. His motto is '" + cursor.getString(4) + "'.");
+                listViewKu.add(String.valueOf(cursor.getInt(0)) + ". " + cursor.getString(1) + " born at " + cursor.getString(2) + ", as " + cursor.getString(3) + " on the team. His motto is '" + cursor.getString(4) + "'.");
             }
             adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listViewKu);
             listView.setAdapter(adapter);
