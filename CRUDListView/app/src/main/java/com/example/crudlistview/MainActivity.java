@@ -2,6 +2,7 @@ package com.example.crudlistview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,10 @@ public class MainActivity extends AppCompatActivity {
     BantuDatabase bd = new BantuDatabase(this);
     //perkenalkan objek2 pada view
     ListView listView;
-    EditText editText;
+    EditText editTextName;
+    EditText editTextDoB;
+    EditText editTextPosition;
+    EditText editTextMotto;
     Button tblTambah;
 
     ArrayAdapter adapter;
@@ -32,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         //persiapkan
         listView = findViewById(R.id.listDataTokoh);
-        editText = findViewById(R.id.editDataTokoh);
+        editTextName = findViewById(R.id.name);
+        editTextDoB = findViewById(R.id.dateOfBirth);
+        editTextPosition = findViewById(R.id.position);
+        editTextMotto = findViewById(R.id.motto);
         tblTambah = findViewById(R.id.tblTambah);
 
         //objek arraylist
@@ -42,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         tblTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bd.tambahData(editText.getText().toString());
+                bd.tambahData(editTextName.getText().toString(), editTextDoB.getText().toString(), editTextPosition.getText().toString(), editTextMotto.getText().toString());
                 Toast.makeText(MainActivity.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
             }
         });
@@ -54,11 +61,15 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Record Kosong", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()){
-                listViewKu.add(String.valueOf(cursor.getInt(0)) + cursor.getString(1));
+                listViewKu.add(String.valueOf(cursor.getInt(0)) + ". " + cursor.getString(1) + ", born at " + cursor.getString(2) + ", as " + cursor.getString(3) + " on the team. His motto is '" + cursor.getString(4) + "'.");
             }
-
             adapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listViewKu);
             listView.setAdapter(adapter);
         }
     }
+
+//    public void TambahData(View view) {
+//        Intent intent = new Intent(MainActivity.this, AddData.class);
+//        startActivity(intent);
+//    }
 }

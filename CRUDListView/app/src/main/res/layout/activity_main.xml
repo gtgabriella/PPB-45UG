@@ -11,8 +11,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Daftar Tokoh Anime Haikyuu"
-        android:textSize="30dp"
+        android:text="List of Haikyuu's Characters"
+        android:textSize="25dp"
         android:textColor="@color/dongker"
         android:background="@color/orange"
         android:gravity="center"
@@ -24,23 +24,78 @@
         android:layout_weight="1"
         />
 
+
+
+<!--    android:foreground="?android:attr/selectableItemBackground"-->
+<!--    android:clickable="true"-->
+<!--    android:onClick="TambahData"-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         >
 
-        <EditText
-            android:id="@+id/editDataTokoh"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_weight="1"
-            />
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:hint="Name"
+                />
+
+            <EditText
+                android:id="@+id/dateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:hint="Date of Birth"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:id="@+id/position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:hint="Position"
+                />
+
+            <EditText
+                android:id="@+id/motto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:hint="Motto"
+                />
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/tblTambah"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ADD"/>
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:text="ADD DATA"
+            />
     </LinearLayout>
 
 
