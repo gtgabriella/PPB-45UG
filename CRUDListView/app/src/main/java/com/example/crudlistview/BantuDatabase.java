@@ -55,4 +55,13 @@ public class BantuDatabase extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(sql, null);
         return cursor;
     }
+
+    public boolean deleteTokoh(int id){
+        //MainActivity.editTextName.setText(id);
+        String kd = Integer.toString(Integer.parseInt(String.valueOf(id)));
+        int kdbrg = Integer.parseInt(kd);
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABEL_TOKOH, KODE + "=" + id, null)>0;
+
+    }
 }

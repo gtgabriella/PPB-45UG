@@ -2,11 +2,14 @@ package com.example.crudlistview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     //buat objek
     BantuDatabase bd = new BantuDatabase(this);
     //perkenalkan objek2 pada view
-    ListView listView;
-    EditText editTextName;
+    public static ListView listView;
+    public static EditText editTextName;
     EditText editTextDoB;
     EditText editTextPosition;
     EditText editTextMotto;
@@ -46,11 +49,36 @@ public class MainActivity extends AppCompatActivity {
         listViewKu = new ArrayList<>();
         tampilkan_tokoh();
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
+                final String noid = listViewKu.get(position);
+                final String nomor = noid.substring(0,2);
+
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Alert!")
+                        .setMessage("Delete this data? ")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int which) {
+                                bd.deleteTokoh(Integer.parseInt(nomor));
+                                listViewKu.remove(position);
+                                listView.invalidateViews();
+                            }
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
+                return false;
+            }
+        });
+
         tblTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 bd.tambahData(editTextName.getText().toString(), editTextDoB.getText().toString(), editTextPosition.getText().toString(), editTextMotto.getText().toString());
                 Toast.makeText(MainActivity.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
+                listViewKu.clear();
+                tampilkan_tokoh();
             }
         });
     }
