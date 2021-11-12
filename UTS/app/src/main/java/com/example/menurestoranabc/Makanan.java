@@ -77,3 +77,4 @@ public class Makanan implements Parcelable {
         parcel.writeString(detail);
     }
 }
+
