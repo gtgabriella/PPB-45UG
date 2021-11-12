@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MenuRestoranABC">
         <activity android:name=".DetailMinuman"
-            android:parentActivityName=".MainMinuman"></activity>
+            android:parentActivityName=".MainMinuman"/>
         <activity android:name=".DetailMakanan"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainMinuman" />
