@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = (ListView)findViewById(R.id.listView);
-        tampilkanBarang("http://127.0.0.1/service_data.php");
+        tampilkanBarang("http://192.168.1.12/service_data.php");
     }
 
     private void tampilkanBarang(String s) {
